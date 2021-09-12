@@ -1,6 +1,7 @@
 from unittest import mock
 from uusi_postinumerot import *
 
+# WRITTEN AND COMMENTED BY HENRY FRIMAN 2021
 
 # TEST 1:
 # THIS TEST WRITES STRING "Askola" IN THE
