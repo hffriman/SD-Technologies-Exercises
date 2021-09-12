@@ -1,5 +1,5 @@
 from unittest import mock
-from uusi_postinumerot import *
+from new_postinumerot import *
 
 # WRITTEN AND COMMENTED BY HENRY FRIMAN 2021
 
