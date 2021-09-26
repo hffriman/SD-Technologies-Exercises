@@ -19,7 +19,9 @@ def fetch_events():
     return events['data']
 
 
-# CREATING A MAIN FUNCTION THAT THE FOLLOWING WAY:
+
+# CREATING A MAIN FUNCTION THAT WORKS THE FOLLOWING WAY:
+
 # --> 1. USES THE UPPER FUNCTION TO STORE
 #        THE RESULTS OF fetch_events FUNCTION
 #        INSIDE A VARIABLE events
@@ -43,7 +45,6 @@ def fetch_events():
 #                   THE CHINESE NAME WILL BE PRINTED
 
 #           !!!! THE DATE OF THE EVENT IS ALWAYS PRINTED AFTER THE NAME !!!!
-
 
 def main():
     
