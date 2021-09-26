@@ -24,27 +24,32 @@ def fetch_events():
 
 # --> 1. USES THE UPPER FUNCTION TO STORE
 #        THE RESULTS OF fetch_events FUNCTION
-#        INSIDE A VARIABLE events
+#        INSIDE A events LIST
 #
-# --> 2. DEFINES VARIABLES FOR THE CURRENT DATE (min),
-#        AS WELL AS THE VARIABLE FOR A DATE 30 DAYS
-#        AFTER THE CURRENT DATE (max),
-#        --> BOTH OF THESE VALUES ARE ALSO CHANGED INTO
-#            ISO FORMAT INSIDE VARIBLES start_srt and end_str
+# --> 2. DEFINES VARIABLES FOR
+#       --> THE CURRENT DATE (min),
+#       --> DATE 30 DAYS AFTER THE CURRENT DATE (max),
+#       --> BOTH OF THE ABOVE IN ISO FORMAT (start_str, end_str)
+#       --> A NEW LIST eventslist, WHICH WILL BE USED LATER
 #
 # --> 3. HANDLES EACH ELEMENT OF THE events LIST
 #        ONE ELEMENT AT A TIME, WITH THESE CONDITIONS:
 #        ---> IF THERE IS NO VALUE INSIDE THE CURRENT
-#             ELEMENT'S VALUE starting_day, IT IS SKIPPED
-#        ---> OTHERWISE, THE LOOP CONTINUES:
+#             ELEMENT'S VARIABLE starting_day, IT IS SKIPPED
+#        ---> OTHERWISE, THE ELEMENT IS STORED IN eventslist
+#
+# --> 4. AFTER THE FIRST LOOP, THE FUNCTION WILL CHECK eventslist
 #             ----> IF THE CURRENT ELEMENT HAS A NAME IN FINNISH,
-#                   THE FINNISH NAME WILL BE PRINTED
+#                   THE FINNISH NAME (AND DATE)  WILL BE PRINTED
 #             ----> IF THE NAME'S NOT IN FINNISH BUT IN ENGLISH,
-#                   THE ENGLISH NAME WILL BE PRINTED
+#                   THE ENGLISH NAME (AND DATE) WILL BE PRINTED
 #             ----> FINALLY, IF THE NAME IS ONLY IN CHINESE,
-#                   THE CHINESE NAME WILL BE PRINTED
+#                   THE CHINESE NAME (AND DATE)  WILL BE PRINTED
+#
+#
+#---> FINAL COMMENT: I ORIGINALLY INTENTED TO PRINT EACH ELEMENT IMMEDIATELY IN THE FIRST LOOP,
+#                    BUT USING A NEW LIST FOR PRINTING MADE THE OVERALL PROCESS FASTER BY 1-2 SECONDS.
 
-#           !!!! THE DATE OF THE EVENT IS ALWAYS PRINTED AFTER THE NAME !!!!
 
 def main():
     
@@ -70,7 +75,7 @@ def main():
         elif event['name']['en']:
             print(event['name']['en'] + ', ' + event['event_dates']['starting_day'])
         elif event['name']['zh']:
-            print(event['name']['en'] + ', ' + event['event_dates']['starting_day'])
+            print(event['name']['zh'] + ', ' + event['event_dates']['starting_day'])
                     
 if __name__ == '__main__':
     main()
