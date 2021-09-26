@@ -55,18 +55,22 @@ def main():
 
     start_str = min.isoformat()
     end_str = max.isoformat()
+
+    eventslist = []
     
     for event in events:
         if event['event_dates']['starting_day'] is None:
             continue
-        else:
-            if start_str < event['event_dates']['starting_day'] < end_str:
-                if (event['name']['fi']):
-                    print(event['name']['fi'] + ', ' + event['event_dates']['starting_day'])
-                elif (event['name']['en']):
-                    print(event['name']['en'] + ', ' + event['event_dates']['starting_day'])
-                elif (event['name']['zh']):
-                    print(event['name']['zh'] + ', ' + event['event_dates']['starting_day'])
-                      
+        elif start_str < event['event_dates']['starting_day'] < end_str:
+            eventslist.append(event)
+                
+    for event in eventslist:
+        if event['name']['fi']:
+            print(event['name']['fi'] + ', ' + event['event_dates']['starting_day'])
+        elif event['name']['en']:
+            print(event['name']['en'] + ', ' + event['event_dates']['starting_day'])
+        elif event['name']['zh']:
+            print(event['name']['en'] + ', ' + event['event_dates']['starting_day'])
+                    
 if __name__ == '__main__':
     main()
