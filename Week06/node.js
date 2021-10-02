@@ -1,16 +1,16 @@
 //WRITTEN AND COMMENTED BY HENRY FRIMAN 2021
 
 // STEP 1: DEFINING VARIABLES:
-// TWO ARRAY VARIABLES THAT STORE THE CONTENT OF JSON FILES (users, posts):
-//     -> users.json AND posts.json ARE STORED INSIDE users and posts
+// TWO ARRAY VARIABLES THAT STORE THE CONTENT OF TWO JSON FILES:
+//     -> userlist.json AND postlist.json ARE STORED INSIDE users and posts
 // FOUR ARRAY VARIABLES THAT STORE ONE ATTRIBUTE 
 // FROM THE MAPPING PROCESS OF EITHER users OR posts
 //     --> usernames STORES name ATTRIBUTES FROM THE MAPPING OF users ARRAY
 //     --> user_userids STORES id ATTRIBUTES FROM THE MAPPING OF users ARRAY
 //     --> titles STORES title ATTRIBUTES FROM THE MAPPING OF posts ARRAY
 //     --> post_userids STORES userId ATTRIBUTES FROM THE MAPPING OF post ARRAY
-let users = require('./users.json');
-let posts = require('./posts.json');
+let users = require('./userlist.json');
+let posts = require('./postlist.json');
 let usernames = users.map(user => user.name);
 let user_userids = users.map(user => user.id);
 let titles = posts.map(post => post.title);
