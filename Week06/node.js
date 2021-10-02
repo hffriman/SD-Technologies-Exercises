@@ -2,12 +2,13 @@
 
 // STEP 1: DEFINING VARIABLES:
 // TWO ARRAY VARIABLES THAT STORE THE CONTENT OF JSON FILES (users, posts):
-//     ---> users.json AND posts.json ARE STORED INSIDE users and posts
-// FOUR ARRAY VARIABLES THAT STORE ONLY ONE ATTRIBUTE OF EITHER users OR posts ARRAYS:
-//     ---> usernames STORES name ATTRIBUTES FROM users ARRAY
-//     ---> user_userids STORES id ATTRIBUTES FROM users ARRAY
-//     ---> titles STORES title ATTRIBUTES FROM posts ARRAY
-//     ---> post_userids STORES ALL THE userId ATTRIBUTES FROM post ARRAY
+//     -> users.json AND posts.json ARE STORED INSIDE users and posts
+// FOUR ARRAY VARIABLES THAT STORE ONE ATTRIBUTE 
+// FROM THE MAPPING PROCESS OF EITHER users OR posts
+//     --> usernames STORES name ATTRIBUTES FROM THE MAPPING OF users ARRAY
+//     --> user_userids STORES id ATTRIBUTES FROM THE MAPPING OF users ARRAY
+//     --> titles STORES title ATTRIBUTES FROM THE MAPPING OF posts ARRAY
+//     --> post_userids STORES userId ATTRIBUTES FROM THE MAPPING OF post ARRAY
 let users = require('./users.json');
 let posts = require('./posts.json');
 let usernames = users.map(user => user.name);
@@ -25,7 +26,7 @@ let post_userids = posts.map(post => post.userId);
 //                TO THE CURRENT VALUE OF post_userids,
 //                (A.K.A. IF THE CURRENT POST HAS THE SAME userId AS THE
 //                 CURRENT USER'S id), THE CURRENT title IS PRINTED
-//   3. AFTER EACH TITLE WRITTEN BY THE CURRENT USER IS PRINTED,
+//   3. AFTER EACH POST TITLE WRITTEN BY THE CURRENT USER IS PRINTED,
 //      THE FIRST LOOP STARTS AGAIN WITH THE NEXT USER AND SO ON...
 // 
 
